@@ -61,7 +61,7 @@ public class FloatTest implements Testlet
 			harness.fail("test_Basics - 3" );
 		}
 
-                if (!System.getProperty("os.name").equals("VxWorks")){
+//                if (!System.getProperty("os.name").equals("VxWorks")){
                   // bug EJWcr00687, has not been fixed yet.
                   // Test is disabled for smallvm 2.0.1 release.
                   try {
@@ -72,7 +72,7 @@ public class FloatTest implements Testlet
                     {
                       harness.fail("test_Basics - 4" );
                     }
-                }
+//                }
 
 		try {
 		    new Float("babu");

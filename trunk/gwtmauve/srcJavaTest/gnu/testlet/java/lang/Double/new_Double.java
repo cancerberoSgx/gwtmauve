@@ -27,28 +27,37 @@ public class new_Double implements Testlet
 {
   public void test (TestHarness harness)
     {
+	  
       // Some broken implementations convert "7.79625120912E289" to
       // the value 7.796251209119999E289.
       harness.check (new Double("7.79625120912E289").toString (),
-		     "7.79625120912E289");
+		     "7.79625120912E289", "new_Double 0");
 
       // A few simple test cases.
-      harness.check (new Double(22.0/7.0).toString (), "3.142857142857143");
-      harness.check (new Double(Math.PI).toString (), "3.141592653589793");
+      harness.check (new Double(22.0/7.0).toString (), "3.142857142857143", "new_Double 1");
+      
+      harness.check (new Double(Math.PI).toString (), "3.141592653589793", "new_Double 2");
+      
       harness.check (Double.valueOf (new Double(Math.PI).toString ()),
-		     new Double(Math.PI));
+		     new Double(Math.PI), "new_Double 3");
+      
       harness.check (Double.valueOf (new Double(-Math.PI).toString ()),
-		     new Double(-Math.PI));
+		     new Double(-Math.PI), "new_Double 4");
+      
       harness.check (new Double(Double.MAX_VALUE).toString (), 
-		     "1.7976931348623157E308");
+		     "1.7976931348623157E308", "new_Double 5");
+      
       harness.check (new Double(-Double.MAX_VALUE).toString (), 
-		     "-1.7976931348623157E308");
+		     "-1.7976931348623157E308", "new_Double 6");
+      
       harness.check (new Double(Double.POSITIVE_INFINITY).toString (), 
-		     "Infinity");
+		     "Infinity", "new_Double 7");
+      
       harness.check (new Double(-Double.POSITIVE_INFINITY).toString (), 
-		     "-Infinity");
+		     "-Infinity", "new_Double 8");
+     
       harness.check (new Double(Double.NaN).toString (), 
-		     "NaN");
+		     "NaN", "new_Double 9");
     }
 }
 

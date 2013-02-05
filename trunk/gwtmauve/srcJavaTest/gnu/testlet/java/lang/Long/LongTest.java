@@ -356,53 +356,53 @@ public class LongTest implements Testlet
 			"test_valueOf - 2" );	
 	}
 
-	public void test_getLong( )
-	{
-		java.util.Properties  prop = System.getProperties();
-		prop.put("longkey1" , "2345" );
-		prop.put("longkey2" , "-984" );
-		prop.put("longkey3" , "-0" );
-
-		prop.put("longkey4" , "#1f" );
-		prop.put("longkey5" , "0x1f" );
-		prop.put("longkey6" , "017" );
-
-		prop.put("longkey7" , "babu" );
-
-
-
-		System.setProperties(prop);
-		harness.checkPoint("getLong");
-		try {
-		  harness.check(Long.getLong("longkey1").longValue() == 2345);
-		} catch (NullPointerException npe) { harness.check(false); }
-		try {
-		  harness.check(Long.getLong("longkey2").longValue() == -984);
-		} catch (NullPointerException npe) { harness.check(false); }
-		try {
-		  harness.check(Long.getLong("longkey3").longValue() == 0);
-		} catch (NullPointerException npe) { harness.check(false); }
-
-		try {
-		  harness.check(Long.getLong("longkey4",new Long(0)).longValue() == 31);
-		} catch (NullPointerException npe) { harness.check(false); }
-		try {
-		  harness.check(Long.getLong("longkey5",new Long(0)).longValue() == 31);
-		} catch (NullPointerException npe) { harness.check(false); }
-		try {
-		  harness.check(Long.getLong("longkey6",new Long(0)).longValue() == 15);
-		} catch (NullPointerException npe) { harness.check(false); }
-
-		try {
-		  harness.check(!( Long.getLong("longkey7", new Long(0)).longValue() != 0 ), 
-			"test_getLong - 3" );
-		} catch (NullPointerException npe) { harness.check(false); }
-		try {
-		  harness.check(!( Long.getLong("longkey7", 0).longValue() != 0 ), 
-			"test_getLong - 4" );
-		} catch (NullPointerException npe) { harness.check(false); }
-
-	}
+//	public void test_getLong( )
+//	{
+//		java.util.Properties  prop = System.getProperties();
+//		prop.put("longkey1" , "2345" );
+//		prop.put("longkey2" , "-984" );
+//		prop.put("longkey3" , "-0" );
+//
+//		prop.put("longkey4" , "#1f" );
+//		prop.put("longkey5" , "0x1f" );
+//		prop.put("longkey6" , "017" );
+//
+//		prop.put("longkey7" , "babu" );
+//
+//
+//
+//		System.setProperties(prop);
+//		harness.checkPoint("getLong");
+//		try {
+//		  harness.check(Long.getLong("longkey1").longValue() == 2345);
+//		} catch (NullPointerException npe) { harness.check(false); }
+//		try {
+//		  harness.check(Long.getLong("longkey2").longValue() == -984);
+//		} catch (NullPointerException npe) { harness.check(false); }
+//		try {
+//		  harness.check(Long.getLong("longkey3").longValue() == 0);
+//		} catch (NullPointerException npe) { harness.check(false); }
+//
+//		try {
+//		  harness.check(Long.getLong("longkey4",new Long(0)).longValue() == 31);
+//		} catch (NullPointerException npe) { harness.check(false); }
+//		try {
+//		  harness.check(Long.getLong("longkey5",new Long(0)).longValue() == 31);
+//		} catch (NullPointerException npe) { harness.check(false); }
+//		try {
+//		  harness.check(Long.getLong("longkey6",new Long(0)).longValue() == 15);
+//		} catch (NullPointerException npe) { harness.check(false); }
+//
+//		try {
+//		  harness.check(!( Long.getLong("longkey7", new Long(0)).longValue() != 0 ), 
+//			"test_getLong - 3" );
+//		} catch (NullPointerException npe) { harness.check(false); }
+//		try {
+//		  harness.check(!( Long.getLong("longkey7", 0).longValue() != 0 ), 
+//			"test_getLong - 4" );
+//		} catch (NullPointerException npe) { harness.check(false); }
+//
+//	}
 
 
 
@@ -422,7 +422,7 @@ public class LongTest implements Testlet
 		test_toBinaryString();
 		test_parseLong();
 		test_valueOf();
-		test_getLong();
+//		test_getLong();
 	}
 
   public void test (TestHarness the_harness)

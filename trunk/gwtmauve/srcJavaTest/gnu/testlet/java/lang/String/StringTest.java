@@ -70,82 +70,82 @@ public class StringTest implements Testlet
 		}catch ( IndexOutOfBoundsException e )
 		{}
 
-		try {
-			byte [] barr = null;
-			String str7 = new String( barr , 0 , 10 );
-			harness.fail("test_Basics - 11");
+//		try {
+//			byte [] barr = null;
+//			String str7 = new String( barr , 0 , 10 );
+//			harness.fail("test_Basics - 11");
+//
+//		}catch ( NullPointerException e )
+//		{}
 
-		}catch ( NullPointerException e )
-		{}
+//		String str8 = new String( cdata , 0 , 4 );
+//		harness.check(!( !str8.equals("hell")), 
+//			"test_Basics - 12");
+//
+//		try {
+//			String str10 = new String( null , 10 );
+//			harness.fail("test_Basics - 13");
+//
+//		}catch ( NullPointerException e )
+//		{}
+//
+//		byte bdata[] = { (byte)'d',(byte)'a',(byte)'n',(byte)'c',(byte)'i',(byte)'n',(byte)'g' };
+//		String str9 = new String(bdata , 10 );
+//
+//		char ch = str9.charAt(1);
+//		int i = (ch & 0xff00 ) >> 8 ;
+//		byte b = (byte)(ch & 0x00ff );
+//
+//		harness.check(!( i != 10 ||  b != 'a' ), 
+//			"test_Basics - 14");
+//		
+//
+//		byte bnull [] = null;
+//		try {
+//			String str11 = new String( bnull , 10 , 0 , 5);
+//			harness.fail("test_Basics - 15");
+//		}catch ( NullPointerException e ){}
+//
+//		try {
+//			String str12 = new String( bdata , 10 , -1 , 3);
+//			harness.fail("test_Basics - 16");
+//		}catch ( IndexOutOfBoundsException  e ){}
+//
+//
+//		String str13 = new String( bdata , 10 , 1 , 1 );
+//		i = (ch & 0xff00 ) >> 8 ;
+//		b = (byte)(ch & 0x00ff );
+//
+//		harness.check(!( i != 10 ||  b != 'a' ), 
+//			"test_Basics - 17");
 
-		String str8 = new String( cdata , 0 , 4 );
-		harness.check(!( !str8.equals("hell")), 
-			"test_Basics - 12");
-
-		try {
-			String str10 = new String( null , 10 );
-			harness.fail("test_Basics - 13");
-
-		}catch ( NullPointerException e )
-		{}
-
-		byte bdata[] = { (byte)'d',(byte)'a',(byte)'n',(byte)'c',(byte)'i',(byte)'n',(byte)'g' };
-		String str9 = new String(bdata , 10 );
-
-		char ch = str9.charAt(1);
-		int i = (ch & 0xff00 ) >> 8 ;
-		byte b = (byte)(ch & 0x00ff );
-
-		harness.check(!( i != 10 ||  b != 'a' ), 
-			"test_Basics - 14");
-		
-
-		byte bnull [] = null;
-		try {
-			String str11 = new String( bnull , 10 , 0 , 5);
-			harness.fail("test_Basics - 15");
-		}catch ( NullPointerException e ){}
-
-		try {
-			String str12 = new String( bdata , 10 , -1 , 3);
-			harness.fail("test_Basics - 16");
-		}catch ( IndexOutOfBoundsException  e ){}
-
-
-		String str13 = new String( bdata , 10 , 1 , 1 );
-		i = (ch & 0xff00 ) >> 8 ;
-		b = (byte)(ch & 0x00ff );
-
-		harness.check(!( i != 10 ||  b != 'a' ), 
-			"test_Basics - 17");
-
-		String str14 = new String( bdata);
-		harness.check(!( !str14.equals("dancing")), 
-			"test_Basics - 18");
+//		String str14 = new String( bdata);
+//		harness.check(!( !str14.equals("dancing")), 
+//			"test_Basics - 18");
 
 		// EJWcr00461
-		byte arr[]={(byte)'a'};
-		String str15 = new String(arr,0x1234,0,1);
-		if (!str15.equals("\u3461")) {
-		    harness.fail("test_Basics - 19");
-		}
+//		byte arr[]={(byte)'a'};
+//		String str15 = new String(arr,0x1234,0,1);
+//		if (!str15.equals("\u3461")) {
+//		    harness.fail("test_Basics - 19");
+//		}
 
 		// EJWcr00462
-		char carr[] = {'h','e','l','l','o'};
-		try {
-		    String str16 = new String(carr, Integer.MAX_VALUE, 1);
-		    harness.fail("test_Basics - 20");
-		} catch (IndexOutOfBoundsException e) {
-		}
-		byte arr2[]={(byte)'a', (byte)'b', (byte)'c', (byte)'d', (byte)'e'};
-		try {
-		    String str17 = new String(arr2,0x1234,Integer.MAX_VALUE,1);
-		    harness.fail("test_Basics - 21");
-		} catch (IndexOutOfBoundsException e) {
-		}
-				 
-		// this used to cause the vm to core dump (cr543)
-		String s = "\u0d3e";
+//		char carr[] = {'h','e','l','l','o'};
+//		try {
+//		    String str16 = new String(carr, Integer.MAX_VALUE, 1);
+//		    harness.fail("test_Basics - 20");
+//		} catch (IndexOutOfBoundsException e) {
+//		}
+//		byte arr2[]={(byte)'a', (byte)'b', (byte)'c', (byte)'d', (byte)'e'};
+//		try {
+//		    String str17 = new String(arr2,0x1234,Integer.MAX_VALUE,1);
+//		    harness.fail("test_Basics - 21");
+//		} catch (IndexOutOfBoundsException e) {
+//		}
+//				 
+//		// this used to cause the vm to core dump (cr543)
+//		String s = "\u0d3e";
 
 	}
 
@@ -281,50 +281,50 @@ public class StringTest implements Testlet
 
 	public void test_getBytes()
 	{
-		String str = "abcdefghijklmn";
-
-		try {
-			str.getBytes(0 , 3 , null , 1 );
-			harness.fail("test_getBytes - 1");
-		}catch ( NullPointerException e ){}
-
-		byte dst[] = new byte[5];
-		
-		try {
-			str.getBytes(-1 , 3 , dst , 1 );
-			harness.fail("test_getBytes - 2");
-		}catch ( IndexOutOfBoundsException e ){}
-
-		try {
-			str.getBytes(4 , 3 , dst , 1 );
-			harness.fail("test_getBytes - 3");
-		}catch ( IndexOutOfBoundsException e ){}
-
-		try {
-			str.getBytes(1 , 15 , dst , 1 );
-			harness.fail("test_getBytes - 4");
-		}catch ( IndexOutOfBoundsException e ){}
-
-		try {
-			str.getBytes(1 , 5 , dst , -1 );
-			harness.fail("test_getBytes - 5");
-		}catch ( IndexOutOfBoundsException e ){}
-
-		try {
-			str.getBytes(1 , 10 , dst , 1 );
-			harness.fail("test_getBytes - 6");
-		}catch ( IndexOutOfBoundsException e ){}
-
-		str.getBytes(0,5,dst, 0 );
-		harness.check(!( dst[0] != 'a' || dst[1] != 'b' || dst[2] != 'c' ||
-			 				  dst[3] != 'd' || dst[4] != 'e' ), 
-			"test_getBytes - 7");
-
-		byte [] dst1 = new byte[40];
-		dst1 = str.getBytes();
-		harness.check(!( dst1[0] != 'a' || dst1[1] != 'b' || dst1[2] != 'c' ||
-			 				  dst1[3] != 'd' || dst1[4] != 'e' ), 
-			"test_getBytes - 8");
+//		String str = "abcdefghijklmn";
+//
+//		try {
+//			str.getBytes(0 , 3 , null , 1 );
+//			harness.fail("test_getBytes - 1");
+//		}catch ( NullPointerException e ){}
+//
+//		byte dst[] = new byte[5];
+//		
+//		try {
+//			str.getBytes(-1 , 3 , dst , 1 );
+//			harness.fail("test_getBytes - 2");
+//		}catch ( IndexOutOfBoundsException e ){}
+//
+//		try {
+//			str.getBytes(4 , 3 , dst , 1 );
+//			harness.fail("test_getBytes - 3");
+//		}catch ( IndexOutOfBoundsException e ){}
+//
+//		try {
+//			str.getBytes(1 , 15 , dst , 1 );
+//			harness.fail("test_getBytes - 4");
+//		}catch ( IndexOutOfBoundsException e ){}
+//
+//		try {
+//			str.getBytes(1 , 5 , dst , -1 );
+//			harness.fail("test_getBytes - 5");
+//		}catch ( IndexOutOfBoundsException e ){}
+//
+//		try {
+//			str.getBytes(1 , 10 , dst , 1 );
+//			harness.fail("test_getBytes - 6");
+//		}catch ( IndexOutOfBoundsException e ){}
+//
+//		str.getBytes(0,5,dst, 0 );
+//		harness.check(!( dst[0] != 'a' || dst[1] != 'b' || dst[2] != 'c' ||
+//			 				  dst[3] != 'd' || dst[4] != 'e' ), 
+//			"test_getBytes - 7");
+//
+//		byte [] dst1 = new byte[40];
+//		dst1 = str.getBytes();
+//		harness.check(!( dst1[0] != 'a' || dst1[1] != 'b' || dst1[2] != 'c' ||
+//			 				  dst1[3] != 'd' || dst1[4] != 'e' ), 
+//			"test_getBytes - 8");
 	}
 
 	public void test_toCharArray()

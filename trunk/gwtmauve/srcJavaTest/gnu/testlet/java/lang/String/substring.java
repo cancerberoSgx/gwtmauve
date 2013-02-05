@@ -27,9 +27,11 @@ public class substring implements Testlet
 {
   public void test (TestHarness harness)
     {
+//	  harness.check(false); 
       String b = new String(" abc\tABC 123\t");
 
-      harness.check (b.substring(4), "	ABC 123	");
+//      harness.check (b.substring(4), "	ABC 123	");
+      harness.check (b.substring(4), "\tABC 123\t");
       harness.check (b.substring(4, b.length() - 5), "	ABC");
 
       boolean ok;

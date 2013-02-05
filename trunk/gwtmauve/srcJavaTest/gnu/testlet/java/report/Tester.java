@@ -12,13 +12,13 @@ import gnu.testlet.Testlet;
  */
 public class Tester {
 	
-	private static String baseName;
+//	private static String baseName;
 
 	/** test to be made */
 	List<Testlet> tests = null;
 	
 	/** tests results */
-	List<J2sTestHarness>results = null;
+	List<GwtTestHarness>results = null;
 
 	private int totalAsserts;
 
@@ -36,11 +36,11 @@ public class Tester {
 		return "<b class=\"method-not-supported\">Method not supported by J2S: "+s+"</b>";
 	}
 	
-	public Tester(List<Testlet> tests, String baseName) {
+	public Tester(List<Testlet> tests) {
 		super();
-		this.baseName=baseName;
+//		this.baseName=baseName;
 		this.tests = tests;
-		results = new LinkedList<J2sTestHarness>();
+		results = new LinkedList<GwtTestHarness>();
 		tests = new LinkedList<Testlet>();
 	}
 
@@ -49,7 +49,7 @@ public class Tester {
 	 */
 	public void testAll() {
 		for(Testlet t : tests) {			
-			J2sTestHarness harness = test(t);	
+			GwtTestHarness harness = test(t);	
 			results.add(harness);
 		}
 	}
@@ -93,11 +93,11 @@ public class Tester {
 					"<td class=\"failed\">Failed</td>" +
 					"<td class=\"failed-names\">Failed asserts names</td>" +
 				"</tr>");
-		for(J2sTestHarness r : results){
+		for(GwtTestHarness r : results){
 			List<TestSubResult> results = r.getResults(), 
 				failed = filterResultsByType(results, TestSubResult.FAIL),
 				passed = filterResultsByType(results, TestSubResult.PASS);
-			boolean exceptionThrowed = r.getType().equals(J2sTestHarness.THROW_NATIVE_EXCEPTION)||r.getType().equals(J2sTestHarness.THROW_EXCEPTION);
+			boolean exceptionThrowed = r.getType().equals(GwtTestHarness.THROW_NATIVE_EXCEPTION)||r.getType().equals(GwtTestHarness.THROW_EXCEPTION);
 			String trClass = !exceptionThrowed?"":"fail";
 			trClass+=(!exceptionThrowed&&failed.size()==0)?" no-failures ":"";
 			
@@ -121,9 +121,9 @@ public class Tester {
 		totalAsserts = 0;
 		okAsserts=0; 
 		failedAsserts = 0;
-		for(J2sTestHarness h : results) {
+		for(GwtTestHarness h : results) {
 			totalTestCount++;
-			if(h.getType()==J2sTestHarness.EXIT_OK) 
+			if(h.getType()==GwtTestHarness.EXIT_OK) 
 				totalTestOK++;
 			else
 				totalTestFailed++;				
@@ -150,28 +150,28 @@ public class Tester {
 		buildHTMLReport(sb);
 		return sb.toString();
 	}
-	public static J2sTestHarness test(Testlet t) {
-		J2sTestHarness harness = new J2sTestHarness(getTestName(t), t);		
+	public static GwtTestHarness test(Testlet t) {
+		GwtTestHarness harness = new GwtTestHarness(getTestName(t), t);		
 		boolean typeSetted=false, nativeThrow=false;
 		try {			
 			t.test(harness);			
 		}catch (Exception e) { 
-			harness.setType(J2sTestHarness.THROW_EXCEPTION);
+			harness.setType(GwtTestHarness.THROW_EXCEPTION);
 			typeSetted=true;
 			harness.setThrowable(e);
 		}catch (Throwable e) { /* this catch native exceptions also*/
-			harness.setType(J2sTestHarness.THROW_NATIVE_EXCEPTION);
+			harness.setType(GwtTestHarness.THROW_NATIVE_EXCEPTION);
 			harness.setThrowable(e);
 			typeSetted=true;
 		}
 		if(!typeSetted)
-			harness.setType(J2sTestHarness.EXIT_OK);
+			harness.setType(GwtTestHarness.EXIT_OK);
 		return harness;		
 	}
 	
 	public static String getTestName(Testlet t) {
 		String cn = t.getClass().getName();
-		return   cn.substring(baseName.length()+1,cn.length());
+		return   cn;//.substring(baseName.length()+1,cn.length());
 	}
 	
 	public static List<TestSubResult> filterResultsByType( List<TestSubResult> l, String type) {

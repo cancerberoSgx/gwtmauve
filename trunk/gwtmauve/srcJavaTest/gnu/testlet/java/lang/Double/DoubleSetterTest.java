@@ -49,17 +49,17 @@ public class DoubleSetterTest implements Testlet
 
 	// Check the MAX_VALUE against NaN via a setter called by reflection
 	DoubleHolder doubleHolder2 = new DoubleHolder();	
-	try
-	{
-	  Method setMethod = DoubleHolder.class.getDeclaredMethod("setValue", new Class[] {double.class});
-	  setMethod.invoke(doubleHolder2, new Object[] {new Double(Double.MAX_VALUE)});
-	} catch (NoSuchMethodException e) {
-	  harness.fail("no method setValue");
-	} catch (IllegalAccessException e) {
-	  harness.fail("illegal access");
-	} catch (InvocationTargetException e) {
-	  harness.fail("invocation failed");
-	}
+//	try
+//	{
+//	  Method setMethod = DoubleHolder.class.getDeclaredMethod("setValue", new Class[] {double.class});
+//	  setMethod.invoke(doubleHolder2, new Object[] {new Double(Double.MAX_VALUE)});
+//	} catch (NoSuchMethodException e) {
+//	  harness.fail("no method setValue");
+//	} catch (IllegalAccessException e) {
+//	  harness.fail("illegal access");
+//	} catch (InvocationTargetException e) {
+//	  harness.fail("invocation failed");
+//	}
 	
 	harness.check(!Double.isNaN(doubleHolder2.getValue()));
 	
