@@ -66,13 +66,13 @@ public class basic implements Testlet
     return t;
   }
 
-  /* Test clone(). */
-  public void test_clone(TestHarness harness)
-  {
-    TreeSet t = getSet("abcdef");
-    set = (TreeSet) t.clone();
-    checkContent("abcdef", harness, "clone");
-  }
+//  /* Test clone(). */
+//  public void test_clone(TestHarness harness)
+//  {
+//    TreeSet t = getSet("abcdef");
+//    set = (TreeSet) t.clone();
+//    checkContent("abcdef", harness, "clone");
+//  }
 
   /* Test add(Object). */
   public void test_add(TestHarness harness)
@@ -163,7 +163,7 @@ public class basic implements Testlet
 
   public void test(TestHarness harness)
   {
-    test_clone(harness);
+//    test_clone(harness); //TreeSet.clone() is unssuported by gwt
     test_add(harness);
     test_addAll(harness);
     test_contains(harness);

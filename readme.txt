@@ -45,3 +45,10 @@ else
 * java/math/BigInteger/modInverse.java cause a infinite loop in prod mode.
 
 * BigInteger.isProbablePrime is very inneficient.nevertheless in java desktop is not that innefficient. it will take 268 ms wile in gwt javascript prod mode will take 5 secs !
+
+* java.util.Collections.rotate(List, int) is missing 
+
+* TreeSet.clone is missing. 
+
+* clone() is missing in some collectiosn like LinkedList and MapSet. in other collections exists like in vector, arraylist. 
+

@@ -501,10 +501,10 @@ public class AcuniaAbstractListTest extends AbstractList implements Testlet
 	}
 	
 	public int size() {
-		if (sleepy){
-			try { Thread.sleep(150L); }
-			catch(Exception e) {}
-		}
+//		if (sleepy){
+//			try { Thread.sleep(150L); }
+//			catch(Exception e) {}
+//		}
 		return v.size();
 	}
 		

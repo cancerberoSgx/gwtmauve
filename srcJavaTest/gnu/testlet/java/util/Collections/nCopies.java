@@ -81,29 +81,29 @@ public class nCopies implements Testlet
     harness.check(pass);
  
     // the method should return a Serializable list
-    testSerialization(harness);
+//    testSerialization(harness);
   }
   
-  private void testSerialization(TestHarness harness) 
-  {
-    List list1 = Collections.nCopies(99, "X");
-    List list2 = null;
-
-    try {
-      ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-      ObjectOutput out = new ObjectOutputStream(buffer);
-      out.writeObject(list1);
-      out.close();
-
-      ObjectInput in = new ObjectInputStream(
-        new ByteArrayInputStream(buffer.toByteArray())
-      );
-      list2 = (List) in.readObject();
-      in.close();
-    }
-    catch (Exception e) {
-        harness.debug(e);
-    }
-    harness.check(list1.equals(list2));
-  }
+//  private void testSerialization(TestHarness harness) 
+//  {
+//    List list1 = Collections.nCopies(99, "X");
+//    List list2 = null;
+//
+//    try {
+//      ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+//      ObjectOutput out = new ObjectOutputStream(buffer);
+//      out.writeObject(list1);
+//      out.close();
+//
+//      ObjectInput in = new ObjectInputStream(
+//        new ByteArrayInputStream(buffer.toByteArray())
+//      );
+//      list2 = (List) in.readObject();
+//      in.close();
+//    }
+//    catch (Exception e) {
+//        harness.debug(e);
+//    }
+//    harness.check(list1.equals(list2));
+//  }
 }
