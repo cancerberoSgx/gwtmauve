@@ -1,6 +1,7 @@
 package gnu.testlet.java.report;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 
 import com.google.gwt.user.client.Window;
 
@@ -13,7 +14,19 @@ public class JavaOnlyTest {
 
 //		test1();
 //		test2();
-		test3();
+//		test3();
+		
+		test4();
+	}
+
+	private static void test4() {
+		long t0 = System.currentTimeMillis(); 
+		String ps = "c6c93915786185fa7ee88f1983cc8d238cd6c5f7a36416c8be317c3df475277784ae1b87b263b88a84d5bacaf63798474ffe490fa412cb437abe5908efbe41b1"; 
+		BigInteger p = new BigInteger(ps, 16);
+
+		boolean prime = p.isProbablePrime(50);
+		
+		System.out.println(prime+" time: "+(System.currentTimeMillis()-t0));
 	}
 
 	private static void test2() {
