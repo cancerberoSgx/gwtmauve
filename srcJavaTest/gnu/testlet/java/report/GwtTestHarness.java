@@ -7,10 +7,10 @@ import java.util.LinkedList;
 import java.util.List;
 /**
  * this harness is also a testResults container
- * @author sebastian
+ * @author sg
  *
  */
-public class J2sTestHarness extends TestHarness{
+public class GwtTestHarness extends TestHarness{
 
 	List<TestSubResult> results = new LinkedList<TestSubResult>();
 	Testlet test;
@@ -22,7 +22,7 @@ public class J2sTestHarness extends TestHarness{
 		THROW_EXCEPTION="THROW EXCEPTION";
 	
 	
-	public J2sTestHarness(String testName, Testlet test) {
+	public GwtTestHarness(String testName, Testlet test) {
 		super();
 		this.test = test;
 		this.testName=testName;
@@ -142,6 +142,7 @@ public class J2sTestHarness extends TestHarness{
 
 	public String getTestUrl() {
 		String cn = test.getClass().getName();
-		return "/j2sMauve/srcMauve/"+cn.replace('.', '/')+".java";		
+		String prefix = "http://code.google.com/p/gwtmauve/source/browse/trunk/gwtmauve/srcJavaTest/"; 		
+		return prefix+cn.replace('.', '/')+".java";		
 	}	
 }

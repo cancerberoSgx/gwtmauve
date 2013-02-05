@@ -249,16 +249,16 @@ public class MathTest implements Testlet
 
 	public void test_IEEEremainder()
 	{
-		harness.check(!( !(new Double(Math.IEEEremainder( Double.NaN, 1.0 ))).isNaN()), 
-			"test_IEEEremainder - 1");
-		harness.check(!( !(new Double(Math.IEEEremainder( 1.0,Double.NaN))).isNaN()),  
-			"test_IEEEremainder - 2");
-		harness.check(!( !(new Double(Math.IEEEremainder( Double.POSITIVE_INFINITY , 2.0))).isNaN()), 
-			"test_IEEEremainder - 3");
-		harness.check(!( !(new Double(Math.IEEEremainder( 2.0,0.0))).isNaN() ), 
-			"test_IEEEremainder - 4");
-		harness.check(!( Math.IEEEremainder( 3.0, Double.POSITIVE_INFINITY ) != 3.0 ), 
-			"test_IEEEremainder - 5");
+//		harness.check(!( !(new Double(Math.IEEEremainder( Double.NaN, 1.0 ))).isNaN()), 
+//			"test_IEEEremainder - 1");
+//		harness.check(!( !(new Double(Math.IEEEremainder( 1.0,Double.NaN))).isNaN()),  
+//			"test_IEEEremainder - 2");
+//		harness.check(!( !(new Double(Math.IEEEremainder( Double.POSITIVE_INFINITY , 2.0))).isNaN()), 
+//			"test_IEEEremainder - 3");
+//		harness.check(!( !(new Double(Math.IEEEremainder( 2.0,0.0))).isNaN() ), 
+//			"test_IEEEremainder - 4");
+//		harness.check(!( Math.IEEEremainder( 3.0, Double.POSITIVE_INFINITY ) != 3.0 ), 
+//			"test_IEEEremainder - 5");
 	}
 	
 	public void test_ceil()

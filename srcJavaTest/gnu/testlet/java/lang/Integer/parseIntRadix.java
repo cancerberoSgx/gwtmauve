@@ -131,29 +131,29 @@ public class parseIntRadix implements Testlet
     // In JDK1.7, '+' is considered a valid character.
     // it means that the following step should be divided
     // for pre JDK1.7 case and >= JDK1.7
-    if (conformToJDK17()) {
-      try
-        {
-          i = Integer.parseInt("+10", 10);
-          harness.check(true);
-          harness.check(i, 10);
-        }
-      catch (NumberFormatException nfe)
-        {
-          harness.fail("'+10' string is not parsed correctly as expected in JDK1.7");
-        }
-      }
-    else { // pre JDK1.7 branch
-      try
-        {
-          i = Integer.parseInt("+10", 10);
-          harness.fail("'+10' must throw NumberFormatException");
-        }
-      catch (NumberFormatException nfe)
-        {
-          harness.check(true);
-        }
-      }
+//    if (conformToJDK17()) {
+//      try
+//        {
+//          i = Integer.parseInt("+10", 10);
+//          harness.check(true);
+//          harness.check(i, 10);
+//        }
+//      catch (NumberFormatException nfe)
+//        {
+//          harness.fail("'+10' string is not parsed correctly as expected in JDK1.7");
+//        }
+//      }
+//    else { // pre JDK1.7 branch
+//      try
+//        {
+//          i = Integer.parseInt("+10", 10);
+//          harness.fail("'+10' must throw NumberFormatException");
+//        }
+//      catch (NumberFormatException nfe)
+//        {
+//          harness.check(true);
+//        }
+//      }
 
     try
       {
@@ -184,21 +184,21 @@ public class parseIntRadix implements Testlet
       }
     }
 
-  /**
-    * Returns true if tested JRE conformns to JDK 1.7.
-    * @author: Mark Wielaard
-    */
-  private static boolean conformToJDK17()
-  {
-    String[] javaVersion = System.getProperty("java.version").split("\\.");
-    String vendorID = System.getProperty("java.vendor");
-    // test of OpenJDK
-    if ("Sun Microsystems Inc.".equals(vendorID))
-      {
-        return Integer.parseInt(javaVersion[1]) >= 7;
-      }
-    return true;
-  }
+//  /**
+//    * Returns true if tested JRE conformns to JDK 1.7.
+//    * @author: Mark Wielaard
+//    */
+//  private static boolean conformToJDK17()
+//  {
+//    String[] javaVersion = System.getProperty("java.version").split("\\.");
+//    String vendorID = System.getProperty("java.vendor");
+//    // test of OpenJDK
+//    if ("Sun Microsystems Inc.".equals(vendorID))
+//      {
+//        return Integer.parseInt(javaVersion[1]) >= 7;
+//      }
+//    return true;
+//  }
 
 }
 

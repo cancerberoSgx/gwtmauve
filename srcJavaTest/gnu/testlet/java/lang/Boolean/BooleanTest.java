@@ -101,21 +101,21 @@ public class BooleanTest implements Testlet
 		     && !Boolean.valueOf("anc").booleanValue());
     }
   
-  public void test_getBoolean(TestHarness harness)
-    {
-      harness.checkPoint ("getBoolean");
-
-      java.util.Properties prop = System.getProperties();
-      prop.put("booleankey1" , "true" );
-      prop.put("booleankey2" , "false" );
-      prop.put("booleankey3" , "hi" );
-      
-      System.setProperties(prop);
-
-      harness.check ( Boolean.getBoolean("booleankey1") == true 
-		      && Boolean.getBoolean("booleankey2") == false 
-		      && Boolean.getBoolean("booleankey3") == false );
-    }
+//  public void test_getBoolean(TestHarness harness)
+//    {
+//      harness.checkPoint ("getBoolean");
+//
+//      java.util.Properties prop = System.getProperties();
+//      prop.put("booleankey1" , "true" );
+//      prop.put("booleankey2" , "false" );
+//      prop.put("booleankey3" , "hi" );
+//      
+//      System.setProperties(prop);
+//
+//      harness.check ( Boolean.getBoolean("booleankey1") == true 
+//		      && Boolean.getBoolean("booleankey2") == false 
+//		      && Boolean.getBoolean("booleankey3") == false );
+//    }
 
   public void test (TestHarness harness)
     {
@@ -124,6 +124,6 @@ public class BooleanTest implements Testlet
       test_hashCode (harness);
       test_booleanValue (harness);
       test_valueOf (harness);
-      test_getBoolean (harness);
+//      test_getBoolean (harness);
     }
 }
