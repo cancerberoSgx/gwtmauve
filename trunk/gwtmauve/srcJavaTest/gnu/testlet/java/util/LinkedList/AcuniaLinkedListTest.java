@@ -51,8 +51,8 @@ public class AcuniaLinkedListTest implements Testlet
        test_size();
        test_lastIndexOf();
        test_toArray();
-       test_clone();
-       test_iterator();
+       //test_clone(); //uses LinkedList.clone() unsupported in gwt
+//       test_iterator(); //uses LinkedList.clone() unsupported in gwt
        test_getFirst();
        test_getLast();
        test_addFirst();
@@ -427,91 +427,91 @@ public class AcuniaLinkedListTest implements Testlet
     th.check( sar == sa , "returned array is the same");
 
   }
-/**
-* implemented. <br>
-*
-*/
-  public void test_clone(){
-    th.checkPoint("clone()java.lang.Object");
-    LinkedList cal,al = new LinkedList();
-    cal = (LinkedList)al.clone();
-    th.check(cal.size() == 0, "checking size -- 1");
-    al.add("a")	;al.add("b")    ;al.add("c"); al.add(null);
-    cal = (LinkedList)al.clone();
-    th.check(cal.size() == al.size(), "checking size -- 2");
-    th.check( al != cal , "Objects are not the same");
-    th.check( al.equals(cal) , "cloned list is equal");
-    al.add("a");
-    th.check(cal.size() == 4, "changes in one object doen't affect the other -- 2");
+///**
+//* implemented. <br>
+//*
+//*/
+//  public void test_clone(){
+//    th.checkPoint("clone()java.lang.Object");
+//    LinkedList cal,al = new LinkedList();
+//    cal = (LinkedList)al.clone();
+//    th.check(cal.size() == 0, "checking size -- 1");
+//    al.add("a")	;al.add("b")    ;al.add("c"); al.add(null);
+//    cal = (LinkedList)al.clone();
+//    th.check(cal.size() == al.size(), "checking size -- 2");
+//    th.check( al != cal , "Objects are not the same");
+//    th.check( al.equals(cal) , "cloned list is equal");
+//    al.add("a");
+//    th.check(cal.size() == 4, "changes in one object doen't affect the other -- 2");
+//
+//  }
 
-  }
 
-
-/**
-* implemented. <br>
-*
-*/
-  public void test_iterator(){
-    th.checkPoint("ModCount(in)iterator");
-    LinkedList al = buildAL();
-    Iterator it = al.iterator();
-    al.get(0);
-    al.contains(null);
-    al.isEmpty();
-    al.indexOf(null);
-    al.lastIndexOf(null);
-    al.size();
-    al.toArray();
-    al.toArray(new String[10]);
-    al.clone();
-    try {
-    	it.next();
-    	th.check(true);
-        }
-    catch(ConcurrentModificationException ioobe) { th.fail("should not throw a ConcurrentModificationException -- 2"); }
-    it = al.iterator();
-    al.add("b");
-    try {
-    	it.next();
-        th.fail("should throw a ConcurrentModificationException -- 3");
-        }
-    catch(ConcurrentModificationException ioobe) { th.check(true); }
-    it = al.iterator();
-    al.add(3,"b");
-    try {
-    	it.next();
-        th.fail("should throw a ConcurrentModificationException -- 4");
-        }
-    catch(ConcurrentModificationException ioobe) { th.check(true); }
-    it = al.iterator();
-    al.addAll(buildAL());
-    try {
-    	it.next();
-        th.fail("should throw a ConcurrentModificationException -- 5");
-        }
-    catch(ConcurrentModificationException ioobe) { th.check(true); }
-    it = al.iterator();
-    al.addAll(2,buildAL());
-    try {
-    	it.next();
-        th.fail("should throw a ConcurrentModificationException -- 6");
-        }
-    catch(ConcurrentModificationException ioobe) { th.check(true); }
-    it = al.iterator();
-    al.remove(2);
-    try {
-    	it.next();
-        th.fail("should throw a ConcurrentModificationException -- 8");
-        }
-    catch(ConcurrentModificationException ioobe) { th.check(true); }
-    it = al.iterator();
-    al.clear();
-    try {
-    	it.next();
-        th.fail("should throw a ConcurrentModificationException -- 9");
-        }
-    catch(ConcurrentModificationException ioobe) { th.check(true); }
-  }
+///**
+//* implemented. <br>
+//*
+//*/
+//  public void test_iterator(){
+//    th.checkPoint("ModCount(in)iterator");
+//    LinkedList al = buildAL();
+//    Iterator it = al.iterator();
+//    al.get(0);
+//    al.contains(null);
+//    al.isEmpty();
+//    al.indexOf(null);
+//    al.lastIndexOf(null);
+//    al.size();
+//    al.toArray();
+//    al.toArray(new String[10]);
+//    al.clone();
+//    try {
+//    	it.next();
+//    	th.check(true);
+//        }
+//    catch(ConcurrentModificationException ioobe) { th.fail("should not throw a ConcurrentModificationException -- 2"); }
+//    it = al.iterator();
+//    al.add("b");
+//    try {
+//    	it.next();
+//        th.fail("should throw a ConcurrentModificationException -- 3");
+//        }
+//    catch(ConcurrentModificationException ioobe) { th.check(true); }
+//    it = al.iterator();
+//    al.add(3,"b");
+//    try {
+//    	it.next();
+//        th.fail("should throw a ConcurrentModificationException -- 4");
+//        }
+//    catch(ConcurrentModificationException ioobe) { th.check(true); }
+//    it = al.iterator();
+//    al.addAll(buildAL());
+//    try {
+//    	it.next();
+//        th.fail("should throw a ConcurrentModificationException -- 5");
+//        }
+//    catch(ConcurrentModificationException ioobe) { th.check(true); }
+//    it = al.iterator();
+//    al.addAll(2,buildAL());
+//    try {
+//    	it.next();
+//        th.fail("should throw a ConcurrentModificationException -- 6");
+//        }
+//    catch(ConcurrentModificationException ioobe) { th.check(true); }
+//    it = al.iterator();
+//    al.remove(2);
+//    try {
+//    	it.next();
+//        th.fail("should throw a ConcurrentModificationException -- 8");
+//        }
+//    catch(ConcurrentModificationException ioobe) { th.check(true); }
+//    it = al.iterator();
+//    al.clear();
+//    try {
+//    	it.next();
+//        th.fail("should throw a ConcurrentModificationException -- 9");
+//        }
+//    catch(ConcurrentModificationException ioobe) { th.check(true); }
+//  }
 
 /**
 * implemented. <br>
