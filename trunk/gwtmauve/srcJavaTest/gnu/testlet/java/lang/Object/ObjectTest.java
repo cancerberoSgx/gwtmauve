@@ -94,34 +94,34 @@ public class ObjectTest	implements Testlet
 	} 
 
 
-	public void test_clone()
-	{
-		try {
-			clone();
-			harness.fail("Error: test_clone did not raise CloneNotSupportedException");
-		}
-		catch ( CloneNotSupportedException e ){}
-
-		java.util.Vector v = new java.util.Vector();
-		java.util.Vector vclone;
-		try {
-			vclone = (java.util.Vector)v.clone();
-		}
-		catch ( Exception e ){
-			if (e instanceof CloneNotSupportedException) {
-			harness.fail("Error: test_clone should not raise CloneNotSupportedException"+
-				               " on Vector " );
-			} else {
-			harness.fail("Error: test_clone should not raise Exception "+
-				               e + " on Vector " );
-			}
-		}
-
-	/*	if (!(( vclone != v ) && ( vclone.getClass() == v.getClass()) && 
-			(vclone.equals( v) )))
-			harness.fail("Error: test_clone did not return proper values");
-	*/
-	}
+//	public void test_clone()
+//	{
+//		try {
+//			clone();
+//			harness.fail("Error: test_clone did not raise CloneNotSupportedException");
+//		}
+//		catch ( CloneNotSupportedException e ){}
+//
+//		java.util.Vector v = new java.util.Vector();
+//		java.util.Vector vclone;
+//		try {
+//			vclone = (java.util.Vector)v.clone();
+//		}
+//		catch ( Exception e ){
+//			if (e instanceof CloneNotSupportedException) {
+//			harness.fail("Error: test_clone should not raise CloneNotSupportedException"+
+//				               " on Vector " );
+//			} else {
+//			harness.fail("Error: test_clone should not raise Exception "+
+//				               e + " on Vector " );
+//			}
+//		}
+//
+//	/*	if (!(( vclone != v ) && ( vclone.getClass() == v.getClass()) && 
+//			(vclone.equals( v) )))
+//			harness.fail("Error: test_clone did not return proper values");
+//	*/
+//	}
 
 	public void testall()
 	{
@@ -129,7 +129,7 @@ public class ObjectTest	implements Testlet
 		test_toString();
 		test_equals();
 		test_hashCode();
-		test_clone();
+//		test_clone(); //gives gwt error No source code is available for type java.lang.CloneNotSupportedException;
 	}
 
   public void test (TestHarness the_harness)

@@ -42,3 +42,6 @@ else
 	Window.alert("OK, result: " + result);
 	
 	
+* java/math/BigInteger/modInverse.java cause a infinite loop in prod mode.
+
+* BigInteger.isProbablePrime is very inneficient.nevertheless in java desktop is not that innefficient. it will take 268 ms wile in gwt javascript prod mode will take 5 secs !
