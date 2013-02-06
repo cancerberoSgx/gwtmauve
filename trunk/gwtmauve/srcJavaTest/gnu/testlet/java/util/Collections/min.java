@@ -63,7 +63,7 @@ public class min implements Testlet
     catch (NullPointerException e) 
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     // try a list with non-comparable items

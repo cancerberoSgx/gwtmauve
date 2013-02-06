@@ -76,6 +76,7 @@ public class AcuniaAbstractCollectionTest extends AbstractCollection
     	th.fail("should throw a NullPointerException");
     	}
     catch (NullPointerException ne) { th.check(true);}
+    catch (Throwable ne) { th.fail("should throw a NullPointerException");} //added by sgurin for gwt complaint
   }
 
 /**
@@ -130,6 +131,7 @@ public class AcuniaAbstractCollectionTest extends AbstractCollection
     	th.fail("should throw a NullPointerException");
     	}
     catch (NullPointerException ne) { th.check(true);}
+    catch (Throwable ne) { th.fail("should throw a NullPointerException");} //added by sgurin for gwt complaint
     Vector v = new Vector();
     v.add("a"); v.add(null); v.add("de"); v.add("fdf");
     th.check( ac.removeAll(v) , "should return true");
@@ -154,6 +156,7 @@ public class AcuniaAbstractCollectionTest extends AbstractCollection
     	th.fail("should throw a NullPointerException");
     	}
     catch (NullPointerException ne) { th.check(true);}
+    catch (Throwable ne) { th.fail("should throw a NullPointerException");} //added by sgurin for gwt complaint
     Vector v = new Vector();
     v.add("a"); v.add(null); v.add("de"); v.add("fdf");
     th.check( ac.retainAll(v) , "should return true");
@@ -196,6 +199,7 @@ public class AcuniaAbstractCollectionTest extends AbstractCollection
     	th.fail("should throw a NullPointerException");
     	}
     catch (NullPointerException ne) { th.check(true);}
+    catch (Throwable ne) { th.fail("should throw a NullPointerException");} //added by sgurin for gwt complaint
     Vector v = new Vector();
     th.check( ac.containsAll(v) , "should return true -- 1");
     v.add("a"); v.add(null); v.add("a"); v.add(null); v.add("a");
@@ -262,6 +266,7 @@ public class AcuniaAbstractCollectionTest extends AbstractCollection
     	th.fail("should throw a NullPointerException");
     	}
     catch (NullPointerException ne) { th.check(true);}
+    catch (Throwable ne) { th.fail("should throw a NullPointerException");} //added by sgurin for gwt complaint
     String [] sa = new String[5];
     for (int i = 0 ; i < 5 ; i++ ){ sa[i] ="ok"; }
     oa = ac.toArray(sa);

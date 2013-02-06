@@ -155,6 +155,7 @@ public class AcuniaVectorTest extends Vector implements Testlet
           th.fail("should throw NullPointerException");
         }
     catch (NullPointerException ne) { th.check(true); }
+    catch (Throwable ne) { th.fail("should throw NullPointerException"); }//added by sgurin for gwt complaint
     v.addElement("a");  v.addElement("b");  v.addElement("c");
     v.addElement(null);
     Collection c = (Collection) v.clone();
@@ -167,7 +168,7 @@ public class AcuniaVectorTest extends Vector implements Testlet
           th.fail("should throw NullPointerException");
         }
     catch (NullPointerException ne) { th.check(true); }
-	
+    catch (Throwable ne) { th.fail("should throw NullPointerException"); }//added by sgurin for gwt complaint
   }
 
 /**
@@ -511,6 +512,7 @@ public class AcuniaVectorTest extends Vector implements Testlet
           th.fail("should throw NullPointerException");
         }
     catch (NullPointerException ne) { th.check(true); }
+    catch (Throwable ne) { th.fail("should throw NullPointerException"); }//added by sgurin for gwt complaint
     Collection c = (Collection) v;
     th.check(!v.addAll(c) ,"checking returnvalue -- 1");
     v.add("a"); v.add("b"); v.add("c");
@@ -703,6 +705,7 @@ public class AcuniaVectorTest extends Vector implements Testlet
           th.fail("should throw NullPointerException");
     }
     catch (NullPointerException ne) { th.check(true); }
+    catch (Throwable ne) { th.fail("should throw NullPointerException"); }//added by sgurin for gwt complaint
     th.debug(v.toString());
     v.add("b");
     th.debug(v.toString());
@@ -953,6 +956,7 @@ public class AcuniaVectorTest extends Vector implements Testlet
           th.fail("should throw NullPointerException");
     }
     catch (NullPointerException ne) { th.check(true); }
+    catch (Throwable ne) { th.fail("should throw NullPointerException"); }//added by sgurin for gwt complaint
     v.add("b"); v.add(null);
     Collection c = (Collection) v;
     v = buildknownV();
@@ -1256,6 +1260,7 @@ public class AcuniaVectorTest extends Vector implements Testlet
           th.fail("should throw NullPointerException -- 1");
         }
     catch (NullPointerException ne) { th.check(true); }
+    catch (Throwable ne) { th.fail("should throw NullPointerException -- 1"); }//added by sgurin for gwt complaint
     v.add("a"); v.add(null); v.add("b");
     String sa[] = new String[5];
     sa[3] = "deleteme"; sa[4] = "leavemealone";
@@ -1268,6 +1273,7 @@ public class AcuniaVectorTest extends Vector implements Testlet
           th.fail("should throw NullPointerException -- 2");
         }
     catch (NullPointerException ne) { th.check(true); }
+    catch (Throwable ne) { th.fail("should throw NullPointerException -- 2"); }//added by sgurin for gwt complaint
     try { v.toArray(sa);
           th.fail("should throw an ArrayStoreException");
         }

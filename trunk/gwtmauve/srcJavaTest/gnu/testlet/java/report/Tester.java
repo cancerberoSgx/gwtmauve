@@ -6,7 +6,7 @@ import java.util.List;
 import gnu.testlet.Testlet;
 //import gnu.testlet.java2.lang.String.decode;
 /**
- * 
+ * This class implements an HTML test set result report. 
  * @author sgurin
  *
  */
@@ -41,7 +41,7 @@ public class Tester {
 //		this.baseName=baseName;
 		this.tests = tests;
 		results = new LinkedList<GwtTestHarness>();
-		tests = new LinkedList<Testlet>();
+//		tests = new LinkedList<Testlet>();
 	}
 
 	/**
@@ -83,6 +83,7 @@ public class Tester {
 				"<p><b>Total test asserts: </b>"+totalAsserts+"</p>"+
 				"<p><b>Total test asserts OK: </b>"+okAsserts+"</p>"+
 				"<p><b>Total test asserts FAILED: </b>"+failedAsserts+"</p>"+
+				"<p><b>Total test asserts FAILED: </b><span id=\"time\"></span></p>"+
 				
 				"<table class=\"main\">" +
 				"<tr class=\"title\">" +

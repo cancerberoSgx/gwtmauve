@@ -42,9 +42,7 @@ else
 	Window.alert("OK, result: " + result);
 	
 	
-* java/math/BigInteger/modInverse.java cause a infinite loop in prod mode.
-
-* BigInteger.isProbablePrime is very inneficient.nevertheless in java desktop is not that innefficient. it will take 268 ms wile in gwt javascript prod mode will take 5 secs !
+* BigInteger.isProbablePrime is very very inneficient.nevertheless in java desktop is not that innefficient. it will take 268 ms wile in gwt javascript prod mode will take 5 secs !
 
 * java.util.Collections.rotate(List, int) is missing 
 
@@ -52,3 +50,16 @@ else
 
 * clone() is missing in some collectiosn like LinkedList and MapSet. in other collections exists like in vector, arraylist. 
 
+* All collections impls addAll() method should throw a NPE if arg is null:
+try {
+	Vector<String> v = new Vector<String>();
+	v.addAll(null);
+} catch (NullPointerException e) {
+	Window.alert("OK");
+} catch (Throwable e) {
+	Window.alert("ERROR");
+}
+
+* Vector.containsAll(null) , Vector.copyInto(null),  Vector.removeAll(null), Vector.retainAll(null), should throw a NPE
+
+* LinkedList.addAll(null) should throw a NPE

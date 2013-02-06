@@ -1,12 +1,23 @@
 package gnu.testlet.java;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Vector;
+
+import gnu.testlet.Testlet;
+import gnu.testlet.java.report.GwtTestHarness;
 import gnu.testlet.java.report.JavaLangTests;
-import gnu.testlet.java.report.JavaUtilTest;
 import gnu.testlet.java.report.Tester;
 import gnu.testlet.java.report.ui.Main;
+import gnu.testlet.java.util.AbstractCollection.AcuniaAbstractCollectionTest;
+import gnu.testlet.java.util.AbstractCollection.AcuniaAddCollectionTest;
 
+import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.Scheduler;
+import com.google.gwt.core.client.Scheduler.ScheduledCommand;
 import com.google.gwt.dom.client.Document;
+import com.google.gwt.dom.client.SpanElement;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.RootPanel;
 
@@ -14,40 +25,68 @@ public class GwtMauveTest implements EntryPoint {
 
 	@Override
 	public void onModuleLoad() {
-		
-		RootPanel.get().add(new Main()); 
-		
-//		JavaLangTests javaLangTests = new JavaLangTests(); 		
-//		Tester tester = new Tester(javaLangTests.getTests());
-//		tester.testAll(); 
-//		String result = tester.buildHTMLReport();
-//		Document.get().getBody().setInnerHTML(result); 
-		
-//		JavaUtilTest javaUtilTests = new JavaUtilTest(); 		
-//		Tester tester = new Tester(javaUtilTests.getTests());
-//		tester.testAll(); 
-//		String result = tester.buildHTMLReport();
-//		Document.get().getBody().setInnerHTML(result); 
-		
-		
+
+		 RootPanel.get().add(new Main());
+
+//		 testAlone();
+
+//		testGwtLog();
+
+//		testCollectionAddAll();
+
 	}
 
-//	private void test2() {
-//		try {
-//			char ch = "abcd".charAt(4);
-//			Window.alert("ERROR");
-//		} catch (IndexOutOfBoundsException e) {
-//			Window.alert("OK");
-//		}
+//	private void testCollectionAddAll() {
+//try {
+//	Vector<String> v = new Vector<String>();
+//	v.addAll(null);
+//} catch (NullPointerException e) {
+//	Window.alert("OK");
+//} catch (Throwable e) {
+//	Window.alert("ERROR");
+//}
+//	}
+
+//	private void testGwtLog() {
+//		/*
+//		 * Install an UncaughtExceptionHandler which will produce <code>FATAL</code> log messages
+//		 */
+//		Log.setUncaughtExceptionHandler();
+//
+//		// use deferred command to catch initialization exceptions in onModuleLoad2
+//		Scheduler.get().scheduleDeferred(new ScheduledCommand() {
+//			@Override
+//			public void execute() {
+//				testGwtLog2();
+//			}
+//		});
+//
 //	}
 //
-//	private void test1() {
-//		try {
-//			StringBuffer sb = new StringBuffer("");
-//			Window.alert("ERROR");
-//		} catch (Exception e) {
-//			Window.alert("OK");
-//		}
+//	protected void testGwtLog2() {
+//		Log.debug("This is a 'DEBUG' test message");
+//		Log.info("This is a 'INFO' test message");
+//		Log.warn("This is a 'WARN' test message");
+//		Log.error("This is a 'ERROR' test message");
+//		Log.fatal("This is a 'FATAL' test message");
+//		testAlone();
 //	}
+
+	private void testAlone() {
+		Testlet test = new AcuniaAbstractCollectionTest();
+//		GwtTestHarness h = new GwtTestHarness("test1", test);
+//		test.test(h);
+		 long t0 = System.currentTimeMillis();
+		 List<Testlet> list = new LinkedList<Testlet>();
+		 list.add(test);
+//		 JavaLangTests javaLangTests = new JavaLangTests();
+		 Tester tester = new Tester(list);
+		 tester.testAll();
+		 String result = tester.buildHTMLReport();
+		 Document.get().getBody().setInnerHTML(result);
+		 long time = System.currentTimeMillis() - t0;
+		 SpanElement timeSpan = Document.get().getElementById("time").cast();
+		 timeSpan.setInnerHTML(time + " ms");
+	}
 
 }

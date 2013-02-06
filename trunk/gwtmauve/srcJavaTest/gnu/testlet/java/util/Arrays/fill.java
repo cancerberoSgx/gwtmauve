@@ -66,7 +66,7 @@ public class fill implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     harness.checkPoint("Arrays.fill(boolean[], int, int, boolean");
@@ -142,7 +142,7 @@ public class fill implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
      
     harness.checkPoint("Arrays.fill(byte[], int, int, byte");
@@ -218,7 +218,7 @@ public class fill implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
      
     harness.checkPoint("Arrays.fill(char[], int, int, char");
@@ -294,7 +294,7 @@ public class fill implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
      
     harness.checkPoint("Arrays.fill(double[], int, int, double");
@@ -370,7 +370,7 @@ public class fill implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
      
     harness.checkPoint("Arrays.fill(float[], int, int, float");
@@ -446,7 +446,7 @@ public class fill implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
      
     harness.checkPoint("Arrays.fill(int[], int, int, int");
@@ -522,7 +522,7 @@ public class fill implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
      
     harness.checkPoint("Arrays.fill(long[], int, int, long");
@@ -598,7 +598,7 @@ public class fill implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
      
     harness.checkPoint("Arrays.fill(Object[], int, int, long");
@@ -674,7 +674,7 @@ public class fill implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
      
     harness.checkPoint("Arrays.fill(short)[], int, int, short");

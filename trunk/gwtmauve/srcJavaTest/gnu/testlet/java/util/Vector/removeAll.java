@@ -59,5 +59,7 @@ public class removeAll implements Testlet
       {
         h.check(true);
       }
+    catch (Throwable ne) { h.fail("NPE should be thrown"); }//added by sgurin for gwt complaint
+    
   }
 }

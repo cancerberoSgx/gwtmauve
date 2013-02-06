@@ -62,7 +62,7 @@ public class fill implements Testlet
 	catch (NullPointerException e) 
 	{
 	  pass = true;
-	}
+	} catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
 	harness.check(pass);
 	
 	// test null argument 2

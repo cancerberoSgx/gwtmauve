@@ -54,7 +54,7 @@ public class reverse implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);                   // check 3
  
     // try an unmodifiable list
@@ -67,7 +67,7 @@ public class reverse implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);                   // check 4
 
   }
