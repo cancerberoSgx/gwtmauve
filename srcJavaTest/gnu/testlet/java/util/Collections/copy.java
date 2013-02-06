@@ -81,7 +81,7 @@ public class copy implements Testlet
 	catch (NullPointerException e) 
 	{
 	  pass = true;
-	}
+	} catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
 	harness.check(pass);
 	
 	// test null argument 2
@@ -92,7 +92,7 @@ public class copy implements Testlet
 	catch (NullPointerException e) 
 	{
 	  pass = true;
-	}
+	} catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
 	harness.check(pass);
 	
 	// try read-only destination

@@ -125,7 +125,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     harness.checkPoint("Arrays.sort(byte[], int, int)");  
@@ -145,7 +145,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     pass = false;
@@ -199,7 +199,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     harness.checkPoint("Arrays.sort(char[], int, int)");  
@@ -219,7 +219,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     pass = false;
@@ -273,7 +273,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     harness.checkPoint("Arrays.sort(double[], int, int)");  
@@ -293,7 +293,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     pass = false;
@@ -347,7 +347,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     harness.checkPoint("Arrays.sort(float[], int, int)");  
@@ -367,7 +367,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     pass = false;
@@ -421,7 +421,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     harness.checkPoint("Arrays.sort(int[], int, int)");  
@@ -441,7 +441,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     pass = false;
@@ -495,7 +495,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     harness.checkPoint("Arrays.sort(long[], int, int)");  
@@ -515,7 +515,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     pass = false;
@@ -569,7 +569,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     harness.checkPoint("Arrays.sort(Object[], int, int)");  
@@ -589,7 +589,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     pass = false;
@@ -673,7 +673,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     harness.checkPoint("Arrays.sort(short[], int, int)");  
@@ -693,7 +693,7 @@ public class sort implements Testlet
     catch (NullPointerException e)
     {
       pass = true;
-    }
+    } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
     harness.check(pass);
     
     pass = false;

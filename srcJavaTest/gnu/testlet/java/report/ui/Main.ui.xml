@@ -9,8 +9,11 @@
 	    
 	     <p>Click one of the following buttons to start tests. <b>Be careful, your browser may block for a while or even could die. </b></p>
 	   
-	    <p><g:Button ui:field="javaLangButton">java.lang</g:Button>
-	        <g:Button ui:field="javaUtilButton">java.util</g:Button></p>
+	    <p>
+	        <g:Button ui:field="javaLangButton">java.lang</g:Button>
+	        <g:Button ui:field="javaUtilButton">java.util</g:Button>
+<!-- 	        <select ui:field="testSelect"></select> -->
+	        </p>
 	        
 	    <p>In this page you can run mauve tests for java.lang and java.util compatibility in GWT. 
 	    In this pages you can see each test result and go to the test java sources. 
@@ -29,6 +32,8 @@
 	        <li>red rows mean javascript errors, catched with catch(Throwable)</li>
 	        <li>the "unamed check 7" means that the 7th harness.check() call (starting from 0) failed.</li>
 	    </ul>
+	    
+	    <p>This GWT applicaiton is compiled with -pretty compiler option so javascript failing code can be more easily debuged. </p>
 	        
 	</g:HTMLPanel>
 </ui:UiBinder> 

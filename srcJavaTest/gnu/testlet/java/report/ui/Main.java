@@ -2,6 +2,7 @@ package gnu.testlet.java.report.ui;
 
 import gnu.testlet.java.report.JavaLangTests;
 import gnu.testlet.java.report.JavaUtilTest;
+import gnu.testlet.java.report.MainController;
 import gnu.testlet.java.report.Tester;
 
 import com.google.gwt.core.client.GWT;
@@ -21,30 +22,21 @@ public class Main extends Composite {
 	interface MainUiBinder extends UiBinder<Widget, Main> {
 	}
 
-	@UiField Button javaLangButton, javaUtilButton; 
+	@UiField Button javaLangButton, javaUtilButton;
+	private MainController controller; 
 	public Main() {
+		controller = new MainController();
 		initWidget(uiBinder.createAndBindUi(this));
-		javaLangButton.addClickHandler(new ClickHandler() {
-			
+		javaLangButton.addClickHandler(new ClickHandler() {			
 			@Override
 			public void onClick(ClickEvent event) {
-				JavaLangTests javaLangTests = new JavaLangTests(); 		
-				Tester tester = new Tester(javaLangTests.getTests());
-				tester.testAll(); 
-				String result = tester.buildHTMLReport();
-				Document.get().getBody().setInnerHTML(result); 
+				controller.performJavaLangTests(); 
 			}
-		}); 
-		
-		javaUtilButton.addClickHandler(new ClickHandler() {
-			
+		}); 		
+		javaUtilButton.addClickHandler(new ClickHandler() {			
 			@Override
 			public void onClick(ClickEvent event) {
-				JavaUtilTest javaUtilTests = new JavaUtilTest(); 		
-				Tester tester = new Tester(javaUtilTests.getTests());
-				tester.testAll(); 
-				String result = tester.buildHTMLReport();
-				Document.get().getBody().setInnerHTML(result); 
+				controller.performJavaUtilTests(); 
 			}
 		}); 
 	}

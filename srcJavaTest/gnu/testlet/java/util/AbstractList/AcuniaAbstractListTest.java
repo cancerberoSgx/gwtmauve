@@ -159,6 +159,7 @@ public class AcuniaAbstractListTest extends AbstractList implements Testlet
     	th.fail("should throw a NullPointerException");
     	}
     catch(NullPointerException ne) { th.check(true); }
+    catch (Throwable ne) { th.fail("should throw a NullPointerException");} //added by sgurin for gwt complaint
     Vector v = new Vector();
     th.check(! eal.addAll(0, v), "checking returnvalue -- 1");
     th.check( eal.size() == 0 , "nothing added yet");

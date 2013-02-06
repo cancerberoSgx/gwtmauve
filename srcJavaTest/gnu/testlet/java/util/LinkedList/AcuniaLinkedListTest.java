@@ -91,6 +91,7 @@ public class AcuniaLinkedListTest implements Testlet
     	th.fail("should throw a NullPointerException");
     	}
     catch(NullPointerException npe) { th.check(true); }
+    catch(Throwable e){th.fail("should throw a NullPointerException");}//added by sgurin for gwt complaint
   }
 
 
@@ -144,6 +145,8 @@ public class AcuniaLinkedListTest implements Testlet
           th.fail("should throw NullPointerException");
         }
     catch (NullPointerException ne) { th.check(true); }
+    catch(Throwable e){th.fail("should throw a NullPointerException");}//added by sgurin for gwt complaint
+    
     Collection c = (Collection) al;
     th.check(!al.addAll(c) ,"checking returnvalue -- 1");
     al.add("a"); al.add("b"); al.add("c");
@@ -403,6 +406,7 @@ public class AcuniaLinkedListTest implements Testlet
           th.fail("should throw NullPointerException -- 1");
         }
     catch (NullPointerException ne) { th.check(true); }
+    catch(Throwable e){th.fail("should throw a NullPointerException -- 1");}//added by sgurin for gwt complaint
     v.add("a"); v.add(null); v.add("b");
     String sa[] = new String[5];
     sa[3] = "deleteme"; sa[4] = "leavemealone";
@@ -416,10 +420,14 @@ public class AcuniaLinkedListTest implements Testlet
           th.fail("should throw NullPointerException -- 2");
         }
     catch (NullPointerException ne) { th.check(true); }
+    catch(Throwable e){th.fail("should throw a NullPointerException -- 2");}//added by sgurin for gwt complaint
+    
     try { v.toArray(new Class[5]);
           th.fail("should throw an ArrayStoreException");
         }
     catch (ArrayStoreException ae) { th.check(true); }
+    catch(Throwable e){th.fail("should throw an ArrayStoreException");}//added by sgurin for gwt complaint
+    
     v.add(null);
     String sar[];
     sa = new String[15];

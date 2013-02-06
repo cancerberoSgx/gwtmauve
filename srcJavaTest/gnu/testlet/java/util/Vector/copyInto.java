@@ -82,6 +82,7 @@ public class copyInto implements Testlet
     {
       pass = true;
     }
+    catch (Throwable ne) { pass=false; }//added by sgurin for gwt complaint
     harness.check(pass);
     
   }
