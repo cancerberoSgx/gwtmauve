@@ -23,7 +23,10 @@ package gnu.testlet.java.util.List;
 
 import gnu.testlet.TestHarness;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 /**
  * A utility class that performs various checks on the subList() method in the 
@@ -32,7 +35,8 @@ import java.util.List;
 public class subList
 {
   /**
-   * Creates a new instance of the specified list class.
+   * Creates a new instance of the specified list class. 
+   * Modified by sgurin for not tu use reflection for gwt support 
    * 
    * @param listClass  the class.
    * @param harness  the harness.
@@ -44,7 +48,13 @@ public class subList
     List result = null;
     try
     {
-      result = (List) listClass.newInstance();
+    	if(listClass.equals(LinkedList.class)) 
+    		result = new LinkedList();  
+    	else if(listClass.equals(Vector.class)) 
+    		result = new Vector(); 
+    	else if(listClass.equals(ArrayList.class)) 
+    		result = new ArrayList(); 
+//      result = (List) listClass.newInstance();
       return result;
     }
     catch (Exception e)

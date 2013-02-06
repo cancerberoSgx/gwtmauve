@@ -69,7 +69,7 @@ public class binarySearch implements Testlet
       pass = true;
     }
     catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException");
     
     b1 = new byte[0];
     harness.check(Arrays.binarySearch(b1, (byte)0), -1);
@@ -95,7 +95,7 @@ public class binarySearch implements Testlet
       pass = true;
     }
     catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException");
     
     b1 = new char[0];
     harness.check(Arrays.binarySearch(b1, '0'), -1);
@@ -121,7 +121,7 @@ public class binarySearch implements Testlet
       pass = true;
     }
     catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException");
     
     b1 = new double[0];
     harness.check(Arrays.binarySearch(b1, 0.0), -1);
@@ -147,7 +147,7 @@ public class binarySearch implements Testlet
       pass = true;
     }
     catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException");
 
     b1 = new float[0];
     harness.check(Arrays.binarySearch(b1, 0.0f), -1);
@@ -173,7 +173,7 @@ public class binarySearch implements Testlet
       pass = true;
     }
     catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException");
 
     b1 = new int[0];
     harness.check(Arrays.binarySearch(b1, 0), -1);
@@ -199,7 +199,7 @@ public class binarySearch implements Testlet
       pass = true;
     }
     catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException");
 
     b1 = new long[0];
     harness.check(Arrays.binarySearch(b1, 0), -1);
@@ -226,7 +226,7 @@ public class binarySearch implements Testlet
       pass = true;
     }
     catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException");
     
     pass = false;
     try
@@ -278,7 +278,7 @@ public class binarySearch implements Testlet
       pass = true;
     }
     catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException");
 
     b1 = new short[0];
     harness.check(Arrays.binarySearch(b1, (short)0), -1);

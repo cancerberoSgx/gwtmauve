@@ -1,0 +1,38 @@
+Several classes of JRE core packages like java.lang and java.util are missing throwing NullPointerException (NPE) in methods that should, according to the JRE specs. This only happens on production mode, not in devmode. A simple example: 
+
+Vector v = new Vector();
+v.addAll(null); <-- should throw a NPE
+
+According to Vector.addAll() method javadocs it should throw a NPE (@throws NullPointerException if the specified collection is null)
+
+This happens in many Collection implementations and in many methods, for example: Vector.containsAll(null) , Vector.copyInto(null),  Vector.removeAll(null), Vector.retainAll(null)  all should throw NPE. 
+
+The same happens for other Collection implementations, for example LinkedList. 
+
+I know you can say these are kind of "negative bugs", but in reality, when integrating 3rd party java code that rely on these specs, gwt devmode will run OK, but in production mode it will break with a nasty and difficult to debug JavaScript exception. 
+
+Found in GWT Release : 2.5.0 RC1
+
+Encountered on OS / Browser (e.g. WinXP, IE8-9, FF7):
+Linux and windows. Firefox and chrome. 
+
+Detailed description:
+
+I'm running mauve tests on GWT at
+
+Shortest code snippet which demonstrates issue (please indicate where
+actual result differs from expected result):
+
+
+
+Workaround if you have one:
+
+
+
+Links to relevant GWT Developer Forum posts:
+
+
+
+Link to patch posted at http://gwt-code-reviews.appspot.com:
+
+
