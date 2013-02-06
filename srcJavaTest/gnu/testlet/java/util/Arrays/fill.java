@@ -67,7 +67,7 @@ public class fill implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException");
     
     harness.checkPoint("Arrays.fill(boolean[], int, int, boolean");
     
@@ -102,7 +102,7 @@ public class fill implements Testlet
     {
       pass = true;
     }
-    harness.check(pass);
+    harness.check(pass, "should throw ArrayIndexOutOfBoundsException 1");
     
     // to index should be < array.length
     pass = false;
@@ -114,7 +114,7 @@ public class fill implements Testlet
     {
       pass = true;
     }
-    harness.check(pass);
+    harness.check(pass, "should throw ArrayIndexOutOfBoundsException 1");
   }
 
   private void testByte(TestHarness harness)
@@ -143,7 +143,7 @@ public class fill implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException 1");
      
     harness.checkPoint("Arrays.fill(byte[], int, int, byte");
     
@@ -219,7 +219,7 @@ public class fill implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException 2");
      
     harness.checkPoint("Arrays.fill(char[], int, int, char");
     
@@ -295,7 +295,7 @@ public class fill implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException 3");
      
     harness.checkPoint("Arrays.fill(double[], int, int, double");
     
@@ -447,7 +447,7 @@ public class fill implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException 4");
      
     harness.checkPoint("Arrays.fill(int[], int, int, int");
     
@@ -523,7 +523,7 @@ public class fill implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException 5");
      
     harness.checkPoint("Arrays.fill(long[], int, int, long");
     
@@ -599,7 +599,7 @@ public class fill implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException 7");
      
     harness.checkPoint("Arrays.fill(Object[], int, int, long");
     
@@ -675,7 +675,7 @@ public class fill implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "should throw NullPointerException 8");
      
     harness.checkPoint("Arrays.fill(short)[], int, int, short");
     

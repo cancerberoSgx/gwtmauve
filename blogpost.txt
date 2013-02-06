@@ -1,0 +1,11 @@
+gwtMauve : how to find GWT JRE emulation bugs using mauve project
+
+The Mauve project contains a lot of JRE compatibility tests. It is used for testing some Java implementation of java.lang, java.util, etc. respect the Java Specification. 
+
+On the other side we have GWT, a Java to JavaScript compiler that claim to give support for a subset of the Java Specification: 
+
+Obviously, because the compiled GWT application runs in the browser, there are some Java classes not supported by GWT, like java.io.File. Nevertheless, we can still use the Mauve project tests that go agains Java hierarchy classes supported by GWT, and these are formally listed in https://developers.google.com/web-toolkit/doc/latest/RefJreEmulation
+
+I have previously ported Mauve project sources to a project similar to GWT: Java2Script (j2s.sf.net). This is the result: http://yui4java.sourceforge.net/j2sMauve/org.sgx.j2s.mauve.report2.JavaLangReport.html. It let us find many bugs. 
+
+

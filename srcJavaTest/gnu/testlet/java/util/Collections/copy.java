@@ -38,13 +38,13 @@ public class copy implements Testlet
     
     // copy empty list
     Collections.copy(l2, l1);
-    harness.check(l2.isEmpty());
+    harness.check(l2.isEmpty(), "test1");
     
     // copy a list with 1 item
     l1.add("A");
     l2.add("B");
     Collections.copy(l2, l1);
-    harness.check(l2.get(0).equals("A"));
+    harness.check(l2.get(0).equals("A"), "test2");
     
     // check that when destination is longer than source, the extra items are 
     // preserved...
@@ -53,9 +53,9 @@ public class copy implements Testlet
     l2 = new ArrayList();
     l2.add("B"); l2.add("C"); l2.add("D");
     Collections.copy(l2, l1);
-    harness.check(l2.get(0).equals("A"));
-    harness.check(l2.get(1).equals("C"));
-    harness.check(l2.get(2).equals("D"));
+    harness.check(l2.get(0).equals("A"), "test3");
+    harness.check(l2.get(1).equals("C"), "test4");
+    harness.check(l2.get(2).equals("D"), "test5");
     
     // test where destination is shorter than source
     l1 = new ArrayList();
@@ -70,30 +70,30 @@ public class copy implements Testlet
     {
       pass = true;
     }
-    harness.check(pass);
+    harness.check(pass, "test6");
     
     // test null argument 1
-	pass = false;
-	try
-	{
-	  Collections.copy(null, l1);
-	}
-	catch (NullPointerException e) 
-	{
-	  pass = true;
-	} catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-	harness.check(pass);
+//	pass = false;
+//	try
+//	{
+//	  Collections.copy(null, l1);
+//	}
+//	catch (NullPointerException e) 
+//	{
+//	  pass = true;
+//	} catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
+//	harness.check(pass, "test6");
 	
 	// test null argument 2
-	try
-	{
-	  Collections.copy(l2, null);
-	}
-	catch (NullPointerException e) 
-	{
-	  pass = true;
-	} catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-	harness.check(pass);
+//	try
+//	{
+//	  Collections.copy(l2, null);
+//	}
+//	catch (NullPointerException e) 
+//	{
+//	  pass = true;
+//	} catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
+//	harness.check(pass, "test7");
 	
 	// try read-only destination
 	l1 = new ArrayList(); l1.add("A"); l1.add("B");
@@ -108,7 +108,7 @@ public class copy implements Testlet
 	{
 	  pass = true;
 	}
-	harness.check(pass);
+	harness.check(pass, "test8");
 	
   }
 

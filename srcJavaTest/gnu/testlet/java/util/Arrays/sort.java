@@ -69,7 +69,7 @@ public class sort implements Testlet
 
 		Arrays.sort(A);
 
-		harness.check (isSorted (A));
+		harness.check (isSorted (A), "test_i="+i);
 	    }
 
 	test_quicksort(harness);
@@ -89,23 +89,23 @@ public class sort implements Testlet
     {
 	float[] float_array = { 7.3f, 20000.7f, 343f, 24f, 0.000004f, 1e09f, 44, 44, 44, 44, 44, 44, 44, 44 };
 	java.util.Arrays.sort(float_array);
-	harness.check(isSorted(float_array));
+	harness.check(isSorted(float_array), "test_quicksort1");
 
 	float[] float_array2 = { 7.3f, 20000.7f, 21.2f, 343f, 24f, 0.000004f, 1e09f };
 	java.util.Arrays.sort(float_array2);
-	harness.check(isSorted(float_array2));
+	harness.check(isSorted(float_array2), "test_quicksort2");
 
 	int[] iarray1 = { 1, 2, 3, 4, 5, 6, 7, 8};
 	java.util.Arrays.sort(iarray1);
-	harness.check(isSorted(iarray1));
+	harness.check(isSorted(iarray1), "test_quicksort3");
 
 	int[] iarray2 = { 8, 7, 6, 5, 4, 3, 2, 1};
 	java.util.Arrays.sort(iarray2);
-	harness.check(isSorted(iarray2));
+	harness.check(isSorted(iarray2), "test_quicksort4");
 
 	int[] iarray3 = { 8, 7, 6, 5, 11, 3, 2, 1};
 	java.util.Arrays.sort(iarray3);
-	harness.check(isSorted(iarray3));
+	harness.check(isSorted(iarray3), "test_quicksort5");
     }
     
   private void testByte(TestHarness harness) 
@@ -126,16 +126,16 @@ public class sort implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "testByte1");
     
     harness.checkPoint("Arrays.sort(byte[], int, int)");  
     byte[] a2 = new byte[] {4, 3, 1, 2, 0};
     Arrays.sort(a2, 1, 4);
-    harness.check(a2[0] == 4);
-    harness.check(a2[1] == 1);
-    harness.check(a2[2] == 2);
-    harness.check(a2[3] == 3);
-    harness.check(a2[4] == 0);
+    harness.check(a2[0] == 4, "testByte2");
+    harness.check(a2[1] == 1, "testByte3");
+    harness.check(a2[2] == 2, "testByte4");
+    harness.check(a2[3] == 3, "testByte5");
+    harness.check(a2[4] == 0, "testByte6");
     
     pass = false;
     try
@@ -146,7 +146,7 @@ public class sort implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "testByte7");
     
     pass = false;
     try
@@ -157,7 +157,7 @@ public class sort implements Testlet
     {
       pass = true;
     }
-    harness.check(pass);
+    harness.check(pass, "testByte8");
     
     pass = false;
     try
@@ -168,7 +168,7 @@ public class sort implements Testlet
     {
       pass = true;
     }
-    harness.check(pass);
+    harness.check(pass, "testByte9");
     
     pass = false;
     try
@@ -179,7 +179,7 @@ public class sort implements Testlet
     {
       pass = true;
     }
-    harness.check(pass);    
+    harness.check(pass, "testByte10");    
   }
 
   private void testChar(TestHarness harness) 
@@ -187,9 +187,9 @@ public class sort implements Testlet
     harness.checkPoint("Arrays.sort(char[])");
     char[] a1 = new char[] {'3', '1', '2'};
     Arrays.sort(a1);
-    harness.check(a1[0] == '1');
-    harness.check(a1[1] == '2');
-    harness.check(a1[2] == '3');
+    harness.check(a1[0] == '1', "testChar1");
+    harness.check(a1[1] == '2', "testChar2");
+    harness.check(a1[2] == '3', "testChar3");
     
     boolean pass = false;
     try
@@ -200,16 +200,16 @@ public class sort implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "testChar4");
     
     harness.checkPoint("Arrays.sort(char[], int, int)");  
     char[] a2 = new char[] {'4', '3', '1', '2', '0'};
     Arrays.sort(a2, 1, 4);
-    harness.check(a2[0] == '4');
-    harness.check(a2[1] == '1');
-    harness.check(a2[2] == '2');
-    harness.check(a2[3] == '3');
-    harness.check(a2[4] == '0');
+    harness.check(a2[0] == '4', "testChar5");
+    harness.check(a2[1] == '1', "testChar6");
+    harness.check(a2[2] == '2', "testChar7");
+    harness.check(a2[3] == '3', "testChar8");
+    harness.check(a2[4] == '0', "testChar9");
     
     pass = false;
     try
@@ -220,7 +220,7 @@ public class sort implements Testlet
     {
       pass = true;
     } catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-    harness.check(pass);
+    harness.check(pass, "testChar10");
     
     pass = false;
     try
@@ -231,7 +231,7 @@ public class sort implements Testlet
     {
       pass = true;
     }
-    harness.check(pass);
+    harness.check(pass, "testChar11");
     
     pass = false;
     try
@@ -242,7 +242,7 @@ public class sort implements Testlet
     {
       pass = true;
     }
-    harness.check(pass);
+    harness.check(pass, "testChar12");
     
     pass = false;
     try
@@ -253,7 +253,7 @@ public class sort implements Testlet
     {
       pass = true;
     }
-    harness.check(pass);    
+    harness.check(pass, "testChar13");    
   }
   
   private void testDouble(TestHarness harness) 

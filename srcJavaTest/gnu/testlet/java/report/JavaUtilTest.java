@@ -76,7 +76,7 @@ public LinkedList<Testlet> getTests() {
 		tests.add(new copyInto());
 		tests.add(new removeAll());
 		tests.add(new retainAll());
-//		tests.add(new gnu.testlet.java.util.Vector.subList()); //uses List/subList test and that use reflection
+		tests.add(new gnu.testlet.java.util.Vector.subList()); //uses List/subList test and that use reflection
 //		tests.add(new VectorSerialization());//features not supported by j2s
 	}
 
@@ -127,7 +127,7 @@ public LinkedList<Testlet> getTests() {
 	private void doLinkedList() {
 		tests.add(new AcuniaLinkedListTest());
 		
-//		tests.add(new gnu.testlet.java.util.LinkedList.subList()); //uses reflection - unsupported in gwt
+		tests.add(new gnu.testlet.java.util.LinkedList.subList()); //uses reflection - unsupported in gwt
 		tests.add(new SubListTest());
 	}
 
@@ -181,9 +181,9 @@ public LinkedList<Testlet> getTests() {
 
 
 	private void doArrayList() {
-		tests.add(new AcuniaArrayListTest());
+		tests.add(new gnu.testlet.java.util.ArrayList.AcuniaArrayListTest());
 //		tests.add(new serial());
-//		tests.add(new subList()); //uses reflection - TODO
+		tests.add(new gnu.testlet.java.util.ArrayList.subList()); //uses reflection - TODO
 	}
 
 

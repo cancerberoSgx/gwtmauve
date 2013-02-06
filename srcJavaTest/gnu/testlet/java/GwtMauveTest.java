@@ -1,5 +1,7 @@
 package gnu.testlet.java;
 
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
@@ -28,6 +30,7 @@ public class GwtMauveTest implements EntryPoint {
 
 		 RootPanel.get().add(new Main());
 
+//		 testIt1();
 //		 testAlone();
 
 //		testGwtLog();
@@ -35,6 +38,15 @@ public class GwtMauveTest implements EntryPoint {
 //		testCollectionAddAll();
 
 	}
+
+//	private void testIt1() {
+//		Collection<String> c = new LinkedList<String>();
+//		c.add("one"); c.add("two"); c.add("three"); 
+//		Iterator<String> it = c.iterator(); 
+//		it.next(); it.hasNext(); it.remove(); 
+//		Window.alert(c.size()+" - "+it.next());
+//		
+//	}
 
 //	private void testCollectionAddAll() {
 //try {
@@ -72,21 +84,21 @@ public class GwtMauveTest implements EntryPoint {
 //		testAlone();
 //	}
 
-	private void testAlone() {
-		Testlet test = new AcuniaAbstractCollectionTest();
-//		GwtTestHarness h = new GwtTestHarness("test1", test);
-//		test.test(h);
-		 long t0 = System.currentTimeMillis();
-		 List<Testlet> list = new LinkedList<Testlet>();
-		 list.add(test);
-//		 JavaLangTests javaLangTests = new JavaLangTests();
-		 Tester tester = new Tester(list);
-		 tester.testAll();
-		 String result = tester.buildHTMLReport();
-		 Document.get().getBody().setInnerHTML(result);
-		 long time = System.currentTimeMillis() - t0;
-		 SpanElement timeSpan = Document.get().getElementById("time").cast();
-		 timeSpan.setInnerHTML(time + " ms");
-	}
+//	private void testAlone() {
+//		Testlet test = new AcuniaAbstractCollectionTest();
+////		GwtTestHarness h = new GwtTestHarness("test1", test);
+////		test.test(h);
+//		 long t0 = System.currentTimeMillis();
+//		 List<Testlet> list = new LinkedList<Testlet>();
+//		 list.add(test);
+////		 JavaLangTests javaLangTests = new JavaLangTests();
+//		 Tester tester = new Tester(list);
+//		 tester.testAll();
+//		 String result = tester.buildHTMLReport();
+//		 Document.get().getBody().setInnerHTML(result);
+//		 long time = System.currentTimeMillis() - t0;
+//		 SpanElement timeSpan = Document.get().getElementById("time").cast();
+//		 timeSpan.setInnerHTML(time + " ms");
+//	}
 
 }

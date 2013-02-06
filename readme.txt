@@ -60,6 +60,34 @@ try {
 	Window.alert("ERROR");
 }
 
-* Vector.containsAll(null) , Vector.copyInto(null),  Vector.removeAll(null), Vector.retainAll(null), should throw a NPE
+* Vector.addAll(null), Vector.containsAll(null) , Vector.copyInto(null),  Vector.removeAll(null), Vector.retainAll(null), should throw a NPE
 
-* LinkedList.addAll(null) should throw a NPE
+* LinkedList.addAll(null), LinkedList.containsAll(null), etc should throw a NPE
+
+* Arrays.fill is not throwing expected index exceptions IllegalArgumentException and ArrayIndexOutOfBoundsException - in this example with boolean, but fails with all.: 
+boolean[] b3 = new boolean[2];
+try {
+	Arrays.fill(b3, 2, 1, false);
+	Window.alert("error 1 - IllegalArgumentException expected");
+} catch (IllegalArgumentException e) {
+}
+try {
+	Arrays.fill(b3, -1, 1, false);
+	Window.alert("error 1 - ArrayIndexOutOfBoundsException expected");
+} catch (ArrayIndexOutOfBoundsException e) {
+}
+
+
+* Collections.copy() do not seem to work. The following fails at least with two implementations: LinkedList and ArrayList: 
+List<String> l1 = new LinkedList<String>();
+List<String> l2 = new LinkedList<String>();
+//	    List<String> l1 = new ArrayList<String>();
+//	    List<String> l2 = new ArrayList<String>();
+// copy empty list
+Collections.copy(l2, l1);
+l1.add("A");
+l2.add("B");
+Collections.copy(l2, l1);
+if(!l2.get(0).equals("A")) {
+	Window.alert("error"); 
+}

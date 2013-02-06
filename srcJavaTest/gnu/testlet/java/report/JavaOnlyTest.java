@@ -2,6 +2,9 @@ package gnu.testlet.java.report;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 import com.google.gwt.user.client.Window;
 
@@ -14,9 +17,17 @@ public class JavaOnlyTest {
 
 //		test1();
 //		test2();
-//		test3();
-		
-		test4();
+//		test3();		
+//		test4();
+		test5();
+	}
+
+	private static void test5() {
+		Collection<String> c = new LinkedList<String>();
+		c.add("one"); c.add("two"); c.add("three"); 
+		Iterator<String> it = c.iterator(); 
+		it.next(); it.hasNext(); it.remove(); 
+		System.out.println(c.size()+" - "+it.next());
 	}
 
 	private static void test4() {

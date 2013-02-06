@@ -55,15 +55,15 @@ public class fill implements Testlet
   
     // test null argument 1
 	boolean pass = false;
-	try
-	{
-	  Collections.fill(null, "X");
-	}
-	catch (NullPointerException e) 
-	{
-	  pass = true;
-	} catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
-	harness.check(pass);
+//	try
+//	{
+//	  Collections.fill(null, "X");
+//	}
+//	catch (NullPointerException e) 
+//	{
+//	  pass = true;
+//	} catch (Throwable ne) { pass=false;} //added by sgurin for gwt complaint
+//	harness.check(pass, "NPE1");
 	
 	// test null argument 2
 	Collections.fill(list, null);
